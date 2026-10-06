@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>ქრონიკა · ფარნავაზი · ფარსმან I · ფარსმან II · ვახტანგ გორგასალი</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Noto Serif Georgian & Noto Sans Georgian -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@400;600;700&family=Noto+Sans+Georgian:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #1e1a16;
+            background-image: linear-gradient(145deg, #2b241e 0%, #1a1511 100%);
+            font-family: 'Noto Serif Georgian', 'Times New Roman', serif;
+            color: #f2e9de;
+            line-height: 1.7;
+            padding: 1.5rem 0.8rem;
+            min-height: 100vh;
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(22, 18, 14, 0.78);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid #b59b7a;
+            border-radius: 24px;
+            box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px #4d3e2e inset;
+            padding: 1.8rem 1.5rem 2.5rem;
+        }
+
+        /* HEADER */
+        h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            text-align: center;
+            letter-spacing: 0.04em;
+            color: #e7d7c0;
+            text-shadow: 0 4px 12px #00000066, 2px 2px 0 #5a3e2b;
+            border-bottom: 2px solid #b59b7a;
+            padding-bottom: 0.7rem;
+            margin-bottom: 0.4rem;
+            font-family: 'Noto Serif Georgian', serif;
+            word-break: break-word;
+        }
+
+        .subhead {
+            text-align: center;
+            font-size: 1rem;
+            color: #cbb295;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            border-bottom: 1px dashed #6b5a47;
+            padding-bottom: 0.9rem;
+        }
+
+        .subhead i {
+            color: #c9a87c;
+            margin: 0 0.5rem;
+        }
+
+        /* GRID */
+        .kings-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            justify-content: center;
+        }
+
+        .king-card {
+            background: #261f19;
+            background: linear-gradient(135deg, #2b231d 0%, #1b1510 100%);
+            border: 1px solid #a38766;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px -5px #00000080, 0 0 0 1px #4d3a28 inset;
+            flex: 1 1 360px;
+            max-width: 660px;
+            padding: 1.6rem 1.5rem 2rem;
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .king-card:hover {
+            border-color: #dbbd97;
+            box-shadow: 0 18px 28px -6px #000000cc, 0 0 0 1px #b3926b inset;
+        }
+
+        /* King header with portrait-icon */
+        .king-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .king-icon {
+            font-size: 2.2rem;
+            color: #b58b5c;
+            background: #2a1f17;
+            border-radius: 50%;
+            width: 3.4rem;
+            height: 3.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #a9815a;
+            flex-shrink: 0;
+        }
+
+        .king-name {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: #f0dfcb;
+            letter-spacing: 0.03em;
+            line-height: 1.2;
+            word-break: break-word;
+            flex: 1;
+        }
+
+        .king-dates {
+            font-size: 0.92rem;
+            font-weight: 400;
+            color: #bda98b;
+            margin-bottom: 1rem;
+            font-style: italic;
+            padding-left: 0.3rem;
+            border-bottom: 1px dotted #6b5a47;
+            padding-bottom: 0.6rem;
+        }
+
+        .king-dates i {
+            margin-right: 0.5rem;
+            color: #c9a87c;
+        }
+
+        .king-body {
+            font-size: 0.96rem;
+            color: #ddd0bf;
+            text-align: left;
+            flex-grow: 1;
+        }
+
+        .king-body p {
+            margin-bottom: 0.85rem;
+        }
+
+        .king-body strong {
+            color: #e6cfb0;
+            font-weight: 600;
+        }
+
+        .king-body em {
+            color: #cbb295;
+        }
+
+        .king-body ul {
+            margin: 0.5rem 0 0.9rem 1.2rem;
+            list-style-type: square;
+        }
+
+        .king-body ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        .highlight {
+            background: #3f3022;
+            color: #f2e0c5;
+            padding: 0.1rem 0.3rem;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #58412c;
+            color: #f0dfcb;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            padding: 0.3rem 0.9rem;
+            border-radius: 30px;
+            text-transform: uppercase;
+            margin-top: 0.8rem;
+            border: 1px solid #a9815a;
+            align-self: flex-start;
+        }
+
+        /* Timeline inside cards */
+        .timeline {
+            margin: 1rem 0 0.5rem;
+            border-left: 2px solid #6b5a47;
+            padding-left: 1rem;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 0.7rem;
+            font-size: 0.9rem;
+            color: #cbb89e;
+        }
+
+        .timeline-item::before {
+            content: "◆";
+            position: absolute;
+            left: -1.35rem;
+            color: #b58b5c;
+            font-size: 0.7rem;
+            top: 0.25rem;
+        }
+
+        .timeline-item strong {
+            color: #e6cfb0;
+        }
+
+        .separator-icon {
+            text-align: center;
+            margin: 2rem 0 0.8rem;
+            color: #b3926b;
+            font-size: 1.2rem;
+            letter-spacing: 0.6rem;
+            opacity: 0.7;
+        }
+
+        /* Scroll to top button (mobile friendly) */
+        .scroll-top {
+            position: fixed;
+            bottom: 1.2rem;
+            right: 1.2rem;
+            background: #58412c;
+            color: #f0dfcb;
+            border: 1px solid #b3926b;
+            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            box-shadow: 0 6px 14px #00000080;
+            text-decoration: none;
+            transition: background 0.2s;
+            z-index: 999;
+        }
+
+        .scroll-top:hover {
+            background: #6f5438;
+        }
+
+        /* RESPONSIVE — mobile first adjustments */
+        @media (max-width: 680px) {
+            body {
+                padding: 0.8rem 0.4rem;
+            }
+
+            .container {
+                padding: 1.2rem 0.9rem 2rem;
+                border-radius: 18px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+                padding-bottom: 0.5rem;
+            }
+
+            .subhead {
+                font-size: 0.8rem;
+                letter-spacing: 0.1em;
+                margin-bottom: 1.4rem;
+            }
+
+            .kings-grid {
+                gap: 1.2rem;
+            }
+
+            .king-card {
+                padding: 1.2rem 1rem 1.6rem;
+                border-radius: 16px;
+                flex: 1 1 100%;
+            }
+
+            .king-header {
+                gap: 0.7rem;
+            }
+
+            .king-icon {
+                font-size: 1.6rem;
+                width: 2.6rem;
+                height: 2.6rem;
+            }
+
+            .king-name {
+                font-size: 1.5rem;
+            }
+
+            .king-dates {
+                font-size: 0.82rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .king-body {
+                font-size: 0.9rem;
+                line-height: 1.65;
+            }
+
+            .king-body ul {
+                margin-left: 1rem;
+            }
+
+            .badge {
+                font-size: 0.6rem;
+                padding: 0.25rem 0.7rem;
+            }
+
+            .timeline {
+                padding-left: 0.8rem;
+            }
+
+            .timeline-item {
+                font-size: 0.84rem;
+            }
+
+            .scroll-top {
+                width: 2.6rem;
+                height: 2.6rem;
+                font-size: 1.2rem;
+                bottom: 0.8rem;
+                right: 0.8rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .king-name {
+                font-size: 1.3rem;
+            }
+
+            .king-icon {
+                font-size: 1.3rem;
+                width: 2.2rem;
+                height: 2.2rem;
+            }
+
+            .king-body {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="top">
+    <h1>ქრონიკა</h1>
+    <div class="subhead">
+        <i class="fas fa-crown"></i> ოთხი მეფე <i class="fas fa-crown"></i>
+    </div>
+
+    <div class="kings-grid">
+        <!-- ==================== ფარნავაზ I ==================== -->
+        <div class="king-card">
+            <div class="king-header">
+                <div class="king-icon"><i class="fas fa-landmark"></i></div>
+                <div class="king-name">ფარნავაზ I</div>
+            </div>
+            <div class="king-dates"><i class="fas fa-calendar-alt"></i> ძვ. წ. III საუკუნის II ნახევარი</div>
+            <div class="king-body">
+                <p><strong>ფარნავაზი</strong> — ქართლის (იბერიის) პირველი მეფე, ფარნავაზიანთა დინასტიის დამაარსებელი. მისი სახელი მჭიდროდ არის დაკავშირებული ქართული სახელმწიფოებრიობის დასაწყისთან. ცნობილია, რომ იგი იყო მცხეთის მმართველი, რომელმაც შეძლო აზონის — მაკედონელი სატრაპის — განდევნა და ქვეყნის გაერთიანება.</p>
+                <p><strong>მთავარი მოღვაწეობა:</strong> ფარნავაზმა შექმნა ძლიერი ცენტრალიზებული სახელმწიფო, დააარსა ახალი დედაქალაქი — მცხეთა, გაატარა ადმინისტრაციული და სამხედრო რეფორმები. ტრადიცია მას მიაწერს ქართული დამწერლობის შექმნას („ფარნავაზის ანბანი“), თუმცა ეს საკითხი სამეცნიერო დავის საგანია.</p>
+                <p><em>ისტორიული მნიშვნელობა:</em> ფარნავაზი ითვლება ქართული სამეფოს ფუძემდებლად და ეროვნული იდენტობის სიმბოლოდ. მისი მმართველობის პერიოდი აღწერილია „ქართლის ცხოვრებაში“.</p>
+
+                <p><strong>დამატებითი დეტალები:</strong></p>
+                <ul>
+                    <li>მან შექმნა პირველი ქართული სამეფო დინასტია, რომელიც საუკუნეების განმავლობაში მართავდა იბერიას.</li>
+                    <li>მისი რეფორმები მოიცავდა საგადასახადო სისტემის, სამხედრო ორგანიზაციისა და სამართლებრივი ნორმების ჩამოყალიბებას.</li>
+                    <li>ლეგენდის თანახმად, ფარნავაზმა ააშენა ქალაქი მცხეთა და გაამაგრა იგი ციხესიმაგრეებით.</li>
+                    <li>მან დაამყარა კავშირები ადგილობრივ ტომებთან და გააერთიანა ისინი ერთი ცენტრალური ხელისუფლების ქვეშ.</li>
+                </ul>
+
+                <p><strong>ქრონოლოგიური მოვლენები:</strong></p>
+                <div class="timeline">
+                    <div class="timeline-item"><strong>ძვ. წ. 299–234:</strong> ფარნავაზ I-ის მეფობა. ტახტზე ასვლა და აზონის განდევნა.</div>
+                    <div class="timeline-item"><strong>ძვ. წ. 284:</strong> მცხეთის დაარსება და დედაქალაქად გამოცხადება.</div>
+                    <div class="timeline-item"><strong>ძვ. წ. 270-იანი წლები:</strong> ადმინისტრაციული და სამხედრო რეფორმების გატარება.</div>
+                    <div class="timeline-item"><strong>ძვ. წ. 234:</strong> ფარნავაზ I-ის გარდაცვალება. ტახტზე ადის მისი ძე — საურმაგ I.</div>
+                </div>
+
+                <div class="badge"><i class="fas fa-landmark"></i> დინასტიის დამფუძნებელი</div>
+            </div>
+        </div>
+
+        <!-- ==================== ფარსმან I ==================== -->
+        <div class="king-card">
+            <div class="king-header">
+                <div class="king-icon"><i class="fas fa-shield-alt"></i></div>
+                <div class="king-name">ფარსმან I</div>
+            </div>
+            <div class="king-dates"><i class="fas fa-calendar-alt"></i> ძვ. წ. II საუკუნის I ნახევარი</div>
+            <div class="king-body">
+                <p><strong>ფარსმან I</strong> — იბერიის მეფე, ფარნავაზიანთა შთამომავალი. მისი მმართველობა მნიშვნელოვანია იბერიის საგარეო პოლიტიკური პოზიციების განმტკიცებით. ანტიკური ავტორები (სტრაბონი, დიო კასიუსი) ახსენებენ მას, როგორც ძლევამოსილ მეფეს, რომელმაც თავი დააღწია სელევკიდებისა და შემდეგ სომხეთის გავლენას.</p>
+                <p><strong>პოლიტიკური კურსი:</strong> ფარსმან I აქტიურად თანამშრომლობდა რომთან, ცდილობდა დაეცვა იბერია სომხეთისა და პართიის ექსპანსიისგან. მან გააძლიერა სამეფო ხელისუფლება და ხელი შეუწყო ქალაქების განვითარებას.</p>
+                <p><em>მემკვიდრეობა:</em> ფარსმან I ითვლება ერთ-ერთ ყველაზე წარმატებულ მეფედ იბერიის ადრეულ ისტორიაში; მისი სახელი გახდა სამეფო ტიტულატურის ნაწილი („ფარსმან“ მოგვიანებით რამდენიმე მეფეს ერქვა).</p>
+
+                <p><strong>დამატებითი ფაქტები:</strong></p>
+                <ul>
+                    <li>სტრაბონი აღნიშნავს, რომ ფარსმან I-ის დროს იბერია იყო ძლიერი სახელმწიფო, რომელსაც ჰქონდა კარგად ორგანიზებული არმია.</li>
+                    <li>მან ააშენა არაერთი ციხესიმაგრე სტრატეგიულ პუნქტებზე, მათ შორის მდინარე მტკვრის ხეობაში.</li>
+                    <li>მისი მმართველობისას გაფართოვდა სავაჭრო კავშირები როგორც დასავლეთით (რომი), ისე აღმოსავლეთით (პართია).</li>
+                    <li>ფარსმან I-მა მოახერხა სომხეთის წინააღმდეგ წარმატებული ლაშქრობები და დაიბრუნა დაკარგული ტერიტორიები.</li>
+                    <li>მან გაატარა სამხედრო რეფორმა, რომლის შედეგადაც იბერიის არმია გახდა ერთ-ერთი ყველაზე ძლიერი რეგიონში.</li>
+                </ul>
+
+                <p><strong>ქრონოლოგიური მოვლენები:</strong></p>
+                <div class="timeline">
+                    <div class="timeline-item"><strong>ძვ. წ. 170:</strong> ფარსმან I ადის ტახტზე. იწყება საგარეო პოლიტიკის გააქტიურება.</div>
+                    <div class="timeline-item"><strong>ძვ. წ. 165:</strong> სომხეთის წინააღმდეგ ლაშქრობა და ტერიტორიების დაბრუნება.</div>
+                    <div class="timeline-item"><strong>ძვ. წ. 160-იანი წლები:</strong> რომთან დიპლომატიური კავშირების დამყარება.</div>
+                    <div class="timeline-item"><strong>ძვ. წ. 150:</strong> ფარსმან I-ის გარდაცვალება. მემკვიდრე — მირდატ I.</div>
+                </div>
+
+                <div class="badge"><i class="fas fa-shield-alt"></i> რომის მოკავშირე</div>
+            </div>
+        </div>
+
+        <!-- ==================== ფარსმან II ==================== -->
+        <div class="king-card">
+            <div class="king-header">
+                <div class="king-icon"><i class="fas fa-scroll"></i></div>
+                <div class="king-name">ფარსმან II</div>
+            </div>
+            <div class="king-dates"><i class="fas fa-calendar-alt"></i> ახ. წ. II საუკუნის I ნახევარი</div>
+            <div class="king-body">
+                <p><strong>ფარსმან II</strong> (ცნობილია როგორც „კეთილი“ ან „დიდი“) — იბერიის მეფე, რომლის მმართველობამ იბერია რეგიონულ ძალად აქცია. მისი სახელი უკავშირდება რომის იმპერატორ ტრაიანესთან და ადრიანესთან ურთიერთობას. ისტორიკოსი დიო კასიუსი აღწერს მის ვიზიტს რომში, სადაც იგი დიდი პატივით მიიღეს.</p>
+                <p><strong>სამხედრო და დიპლომატიური წარმატებები:</strong> ფარსმან II-მ მოახერხა სომხეთის ტახტზე თავისი კანდიდატის დაყენება, რითაც გააფართოვა იბერიის გავლენა. იგი ასევე აქტიურად ებრძოდა ალანებსა და სხვა მომთაბარე ტომებს ჩრდილოეთიდან.</p>
+                <p><em>კულტურული მემკვიდრეობა:</em> მის დროს გაძლიერდა ქალაქები, განვითარდა ვაჭრობა და ხელნაწერი ტრადიცია. ფარსმან II ითვლება იბერიის „ოქროს ხანის“ ერთ-ერთ წინამორბედად.</p>
+
+                <p><strong>მნიშვნელოვანი დეტალები:</strong></p>
+                <ul>
+                    <li>რომის იმპერატორმა ადრიანემ ფარსმან II-ს უბოძა ტიტული „იბერიის მეფე და რომის მეგობარი“.</li>
+                    <li>მან გააძლიერა ქართლის სამეფო კარი და დაამყარა მჭიდრო კავშირები რომის იმპერიასთან.</li>
+                    <li>მისი მმართველობის პერიოდში აშენდა არაერთი ტაძარი და საზოგადოებრივი შენობა მცხეთასა და სხვა ქალაქებში.</li>
+                    <li>ისტორიულ წყაროებში იგი მოიხსენიება, როგორც ერთ-ერთი ყველაზე განათლებული და დიპლომატიური მეფე.</li>
+                    <li>ფარსმან II-ის მმართველობისას იბერიამ მიაღწია ტერიტორიულ გაფართოებას და ეკონომიკურ აყვავებას.</li>
+                    <li>მან დაამყარა მშვიდობიანი ურთიერთობები მეზობელ სახელმწიფოებთან და გააძლიერა სავაჭრო გზები.</li>
+                </ul>
+
+                <p><strong>ქრონოლოგიური მოვლენები:</strong></p>
+                <div class="timeline">
+                    <div class="timeline-item"><strong>116:</strong> ფარსმან II ადის ტახტზე. იწყება აქტიური საგარეო პოლიტიკა.</div>
+                    <div class="timeline-item"><strong>120-იანი წლები:</strong> ვიზიტი რომში იმპერატორ ადრიანესთან. ტიტულის მიღება.</div>
+                    <div class="timeline-item"><strong>125:</strong> სომხეთის ტახტზე თავისი კანდიდატის დაყენება.</div>
+                    <div class="timeline-item"><strong>130-იანი წლები:</strong> ალანების წინააღმდეგ ლაშქრობა და ჩრდილოეთ საზღვრების გამაგრება.</div>
+                    <div class="timeline-item"><strong>132:</strong> ფარსმან II-ის გარდაცვალება. მემკვიდრე — რადამისტი.</div>
+                </div>
+
+                <div class="badge"><i class="fas fa-scroll"></i> რომის იმპერატორის მეგობარი</div>
+            </div>
+        </div>
+
+        <!-- ==================== ვახტანგ გორგასალი ==================== -->
+        <div class="king-card">
+            <div class="king-header">
+                <div class="king-icon"><i class="fas fa-cross"></i></div>
+                <div class="king-name">ვახტანგ გორგასალი</div>
+            </div>
+            <div class="king-dates"><i class="fas fa-calendar-alt"></i> დაახლ. 442 – 502</div>
+            <div class="king-body">
+                <p><strong>ვახტანგ I გორგასალი</strong> — ქართლის მეფე, რომლის სახელი ნიშნავს „მგლის თავს“ (ჩაფხუტის მგლისებრი ნიშნიდან). ტახტზე 15 წლის ასაკში ავიდა და დაახლოებით 45 წელი მეფობდა. იგი ცნობილია როგორც სასანიანთა სპარსეთის წინააღმდეგ მებრძოლი და ქრისტიანული სარწმუნოების დამცველი.</p>
+                <p><strong>მთავარი მიღწევები:</strong> გააერთიანა ქვეყანა, ააშენა უჯარმის ციხე, დაამარცხა ოსები და ჰუნები, დაამყარა დიპლომატიური ბალანსი ბიზანტიასა და სპარსეთს შორის. ებრძოდა ზოროასტრიზმის გავრცელებას და იცავდა მართლმადიდებლობას.</p>
+                <p><em>მოწამეობრივი სიკვდილი:</em> დაახლ. 502 წელს, ბრძოლაში მძიმედ დაიჭრა და გარდაიცვალა. დაკრძალულია მცხეთის სვეტიცხოვლის ტაძარში. საქართველოს მართლმადიდებელი ეკლესიის მიერ შერაცხილია წმინდანად (ხსენება 13 დეკემბერს).</p>
+
+                <p><strong>დამატებითი ინფორმაცია:</strong></p>
+                <ul>
+                    <li>მისი სახელი „გორგასალი“ მომდინარეობს ჩაფხუტიდან, რომელსაც მგლის თავის გამოსახულება ჰქონდა — სპარსელები მას „მგლის თავს“ ეძახდნენ.</li>
+                    <li>მან დააარსა რამდენიმე ქალაქი და ციხესიმაგრე, მათ შორის უჯარმა, რომელიც მნიშვნელოვან სტრატეგიულ პუნქტად იქცა.</li>
+                    <li>ვახტანგ გორგასალი აქტიურად ებრძოდა სპარსეთის ზეწოლას და ცდილობდა ქვეყნის დამოუკიდებლობის შენარჩუნებას.</li>
+                    <li>მისი მმართველობის პერიოდში განმტკიცდა ქრისტიანობა და აშენდა მრავალი ეკლესია.</li>
+                    <li>ტრადიციულად ითვლება, რომ მან შექმნა ქართული სამხედრო ორგანიზაციის საფუძვლები.</li>
+                    <li>მისი მმართველობისას გაძლიერდა სამეფო ხელისუფლება და შემცირდა დიდგვაროვანთა გავლენა.</li>
+                    <li>ვახტანგ გორგასალმა ააშენა არაერთი ციხესიმაგრე სტრატეგიულ გზებზე, მათ შორის თბილისის ტერიტორიაზე.</li>
+                    <li>იგი აქტიურად ეხმარებოდა ეკლესიას და ხელს უწყობდა სასულიერო განათლების განვითარებას.</li>
+                </ul>
+
+                <p><strong>ქრონოლოგიური მოვლენები:</strong></p>
+                <div class="timeline">
+                    <div class="timeline-item"><strong>442:</strong> ვახტანგის დაბადება. მამა — მირდატ V, დედა — საღდუხტი.</div>
+                    <div class="timeline-item"><strong>449:</strong> მირდატ V-ის გარდაცვალება. ვახტანგი 7 წლისაა, რეგენტი — დედა საღდუხტი.</div>
+                    <div class="timeline-item"><strong>447:</strong> ვახტანგი ოფიციალურად ადის ტახტზე 15 წლის ასაკში.</div>
+                    <div class="timeline-item"><strong>450-იანი წლები:</strong> ოსებისა და ჰუნების წინააღმდეგ ლაშქრობა. ჩრდილოეთ საზღვრების გამაგრება.</div>
+                    <div class="timeline-item"><strong>460-იანი წლები:</strong> დიპლომატიური თამაში სპარსეთსა და ბიზანტიას შორის. უჯარმის ციხის მშენებლობა.</div>
+                    <div class="timeline-item"><strong>470-იანი წლები:</strong> სპარსეთთან ურთიერთობის გამწვავება. ომის დაწყება.</div>
+                    <div class="timeline-item"><strong>502:</strong> ბრძოლაში მძიმედ დაიჭრა და გარდაიცვალა. დაკრძალულია სვეტიცხოველში.</div>
+                </div>
+
+                <div class="badge"><i class="fas fa-cross"></i> წმინდანი მეფე</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="separator-icon">
+        <i class="fas fa-dragon"></i> <i class="fas fa-dragon"></i> <i class="fas fa-dragon"></i>
+    </div>
+</div>
+
+<!-- Scroll to top button -->
+<a href="#top" class="scroll-top" aria-label="დასაწყისში დაბრუნება">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
+</body>
+</html>
